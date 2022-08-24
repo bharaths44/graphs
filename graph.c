@@ -55,17 +55,13 @@ void bfs(int i)
 			q[++r]=j;
 	}
 	if(f<=r)
-	{
 		bfs(q[f++]);
-		
-	}
 }
 void main()
 {
 	init(graph);
 	for(int i=0;i<n;i++)
 		visit[i]=0;
-	
 	addEdge(graph,0,1);
 	addEdge(graph,0,3);
 	addEdge(graph,0,4);
