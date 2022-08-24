@@ -19,7 +19,7 @@ void addEdge(int arr[][n],int s,int d)
 	arr[d][s]=1;
 }
 
-void prtGraph(int arr[][n])
+void printGraph(int arr[][n])
 {
 	int i,j;
 	for(i=0;i<n;i++)
@@ -55,22 +55,26 @@ void bfs(int i)
 			q[++r]=j;
 	}
 	if(f<=r)
+	{
 		bfs(q[f++]);
+		
+	}
 }
 void main()
 {
 	init(graph);
 	for(int i=0;i<n;i++)
 		visit[i]=0;
+	
 	addEdge(graph,0,1);
 	addEdge(graph,0,3);
 	addEdge(graph,0,4);
 	addEdge(graph,1,2);
 	addEdge(graph,2,5);
 	addEdge(graph,4,5);
-	addEdge(graph,3,5);	
+	addEdge(graph,3,4);
 	printf("The graph represented by adjacent matrix :\n");
-	prtGraph(graph);
+	printGraph(graph);
 	printf("\n");
 	printf("The Breadth-First Traversal of the graph is :\n");
 	bfs(0);
